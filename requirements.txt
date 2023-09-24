@@ -1,0 +1,6 @@
+Flask==2.1.0
+sqlite3==3.36.0
+flask-sqlalchemy==2.6.0  # For working with SQLAlchemy
+flask-wtf==0.15.1  # For handling forms in Flask
+flask-session==0.4.0  # For session management in Flask
+python==3.9.7  # Replace with your specific Python version

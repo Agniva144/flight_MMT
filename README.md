@@ -33,3 +33,7 @@ Before you begin, make sure you have the following installed on your system:
 - In the home page , in the input fields give start destination and end destination , with number of passengers and date and it show you the related flights with price.
 - In the add price button, (which is an admin control function) person can add the price of flight from listed place to another with choice of their flights and it will be saved into the database.
 
+## Install From Github
+- Fork this repo from this link : https://github.com/Agniva144/flight_MMT
+- Open a code editor , open terminal : git clone https://github.com/Agniva144/flight_MMT
+- Get the cloned version and then follow the predefined steps to open the app in live server.

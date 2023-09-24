@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Search</title>
+    <!-- Include Bootstrap CSS from a CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <a href="/add_price" class="btn btn-secondary mt-3">Add Price</a>
+
+        <h1 class="mt-5">Flight Search</h1>
+        <form action="/search" method="post">
+            {% if error_message %}
+                <p class="error-message" style="color: red;">{{ error_message }}</p>
+            {% endif %}
+            <div class="mb-3">
+                <label for="from" class="form-label">From:</label>
+                <select class="form-select" id="from" name="from" required>
+                    <option value="">Select From Location</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Guwahati">Guwahati</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="to" class="form-label">To:</label>
+                <select class="form-select" id="to" name="to" required>
+                    <option value="">Select To Location</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Guwahati">Guwahati</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="passengers" class="form-label">Number of Passengers:</label>
+                <input type="number" class="form-control" id="passengers" name="passengers" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="departure_date" class="form-label">Departure Date:</label>
+                <input type="date" class="form-control" id="departure_date" name="departure_date" required
+                       min="{{ current_date }}">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+    </div>
+
+    <div class="container mb-5">
+        {% if flight_data %}
+        <h1 class="mt-5">Flight Search Results</h1>
+        <p>Number of Passengers: {{ num_passengers }}</p>
+        <p>Departure Date: {{ departure_date }}</p>
+
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Airline</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in flight_data %}
+                <tr>
+                    <td>{{ flight[1] }}</td>
+                    <td>{{ flight[3] }}</td>
+                    <td>{{ flight[2] }}</td>
+                    <td>{{ flight[4] }}</td>
+                    <td>{{ flight[5] }}</td>
+                    <td>{{ flight[5] * num_passengers }}</td>
+                    <td>{{ flight[6] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="/" class="btn btn-primary">Back to Search</a>
+
+        {% endif %}
+    </div>
+
+
+
+    <!-- Include Bootstrap JS from a CDN (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

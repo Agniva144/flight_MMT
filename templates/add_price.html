@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Price Management</title>
+    <!-- Include Bootstrap CSS from a CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Home Button to return to the main page -->
+        <a href="/" class="btn btn-secondary mt-3">Home</a>
+
+
+        <h1 class="mt-5">Flight Price Management</h1>
+
+        
+
+        <!-- Add Price Form -->
+        <form action="/add_price" method="POST">
+            {% if message %}
+                <p class="error-message" style="color: green;">{{ message }}</p>
+            {% endif %}
+
+
+            <div class="mb-3">
+                <label for="from" class="form-label">From:</label>
+                <select class="form-select" id="from" name="from" required>
+                    <option value="">Select From Location</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Guwahati">Guwahati</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="start_time" class="form-label">Journey Start Time:</label>
+                <input type="time" class="form-control" id="start_time" name="start_time" required>
+            </div>            
+
+            <div class="mb-3">
+                <label for="to" class="form-label">To:</label>
+                <select class="form-select" id="to" name="to" required>
+                    <option value="">Select To Location</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Guwahati">Guwahati</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="start_time" class="form-label">Journey End Time:</label>
+                <input type="time" class="form-control" id="end_time" name="end_time" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+                <input type="number" class="form-control" id="price" name="price" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="airline" class="form-label">Airline:</label>
+                <select class="form-select" id="airline" name="airline" required>
+                    <option value="Indigo">Indigo</option>
+                    <option value="Vistara">Vistara</option>
+                    <option value="Air India">Air India</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-success">Add Price</button>
+        </form>
+
+    </div>
+
+    <!-- Include Bootstrap JS from a CDN (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

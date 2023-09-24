@@ -35,5 +35,5 @@ Before you begin, make sure you have the following installed on your system:
 
 ## Install From Github
 - Fork this repo from this link : https://github.com/Agniva144/flight_MMT
-- Open a code editor , open terminal : git clone https://github.com/Agniva144/flight_MMT
+- Open a code editor , open terminal : git clone [https://github.com/Agniva144/flight_MMT](https://github.com/Agniva144/flight_MMT.git)
 - Get the cloned version and then follow the predefined steps to open the app in live server.
